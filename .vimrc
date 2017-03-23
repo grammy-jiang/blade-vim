@@ -9,3 +9,10 @@ set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 set expandtab
+
+" search
+set hlsearch
+set ignorecase
+
+" history
+set history=10000

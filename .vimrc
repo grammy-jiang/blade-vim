@@ -44,6 +44,20 @@ endif
 " https://github.com/docker/docker/tree/master/contrib/syntax/vim
 Plugin 'docker/docker' , {'rtp': '/contrib/syntax/vim/'}
 
+" https://github.com/vim-syntastic/syntastic
+" For python development, flake8 or pyflakes or pylint is needed.
+Plugin 'scrooloose/syntastic'
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+let g:syntastic_aggregate_errors = 1
+
 call vundle#end()            " required
 filetype plugin indent on    " required
 

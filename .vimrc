@@ -12,6 +12,8 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ' ' 
 let g:airline#extensions#tabline#left_alt_sep = '|' 
 
+Plugin 'vim-airline/vim-airline-themes'
+
 call vundle#end()            " required
 filetype plugin indent on    " required
 

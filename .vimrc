@@ -27,6 +27,22 @@ else
     set background=dark
 endif
 
+
+" --------------------------------------------------------------------------- "
+"                               Auto Completion                               "
+" --------------------------------------------------------------------------- "
+
+" https://github.com/valloric/youcompleteme
+" Install the prerequsite:
+" sudo apt-get install build-essential cmake
+" sudo apt-get install python-dev python3-dev
+" cd ~/.vim/bundle/YouCompleteMe
+" ./install.py --clang-completer
+" pip install jedi
+
+Plugin 'valloric/youcompleteme'
+let g:ycm_python_binary_path = 'python'
+
 " --------------------------------------------------------------------------- "
 "                          Search & File Management                           "
 " --------------------------------------------------------------------------- "

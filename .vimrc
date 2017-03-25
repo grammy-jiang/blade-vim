@@ -7,9 +7,9 @@ call vundle#begin()
 " https://github.com/VundleVim/Vundle.vim
 Plugin 'VundleVim/Vundle.vim'
 
-" -------------------------------------------------------------------------- "
-"                                 Appearence                                 "
-" -------------------------------------------------------------------------- "
+" --------------------------------------------------------------------------- "
+"                                 Appearence                                  "
+" --------------------------------------------------------------------------- "
 
 Plugin 'vim-airline/vim-airline'
 set laststatus=2
@@ -27,6 +27,12 @@ else
     set background=dark
 endif
 
+" --------------------------------------------------------------------------- "
+"                              Syntax Highlight                               "
+" --------------------------------------------------------------------------- "
+
+" https://github.com/docker/docker/tree/master/contrib/syntax/vim
+Plugin 'docker/docker' , {'rtp': '/contrib/syntax/vim/'}
 
 call vundle#end()            " required
 filetype plugin indent on    " required

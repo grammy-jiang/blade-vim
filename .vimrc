@@ -28,7 +28,7 @@ else
 endif
 
 " --------------------------------------------------------------------------- "
-"                              Syntax Highlight                               "
+"                          Syntax Check & Highlight                           "
 " --------------------------------------------------------------------------- "
 
 " https://github.com/docker/docker/tree/master/contrib/syntax/vim

@@ -6,6 +6,10 @@ call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                                 Appearence                                 "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 Plugin 'vim-airline/vim-airline'
 set laststatus=2
 let g:airline#extensions#tabline#enabled = 1 

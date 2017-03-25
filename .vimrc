@@ -4,6 +4,7 @@ filetype off                  " required
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
+" https://github.com/VundleVim/Vundle.vim
 Plugin 'VundleVim/Vundle.vim'
 
 " -------------------------------------------------------------------------- "
@@ -17,6 +18,15 @@ let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|' 
 
 Plugin 'vim-airline/vim-airline-themes'
+
+" https://github.com/altercation/vim-colors-solarized
+Plugin 'altercation/vim-colors-solarized'
+if has('gui_running')
+    set background=light
+else
+    set background=dark
+endif
+
 
 call vundle#end()            " required
 filetype plugin indent on    " required

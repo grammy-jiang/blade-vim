@@ -39,7 +39,6 @@ endif
 " cd ~/.vim/bundle/YouCompleteMe
 " ./install.py --clang-completer
 " pip install jedi
-
 Plugin 'valloric/youcompleteme'
 let g:ycm_python_binary_path = 'python'
 

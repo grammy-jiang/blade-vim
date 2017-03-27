@@ -33,7 +33,7 @@ let g:indentLine_char = '|'
 nmap <F9> :IndentLinesToggle<CR>
 
 " --------------------------------------------------------------------------- "
-"                               Auto Completion                               "
+"                        Auto Completion & Auto Format                        "
 " --------------------------------------------------------------------------- "
 
 " https://github.com/valloric/youcompleteme
@@ -45,6 +45,13 @@ nmap <F9> :IndentLinesToggle<CR>
 " pip install jedi
 Plugin 'valloric/youcompleteme'
 let g:ycm_python_binary_path = 'python'
+
+" https://github.com/Chiel92/vim-autoformat
+" Install the prerequsite:
+" pip install autopep8
+Plugin 'Chiel92/vim-autoformat'
+noremap <F3> :Autoformat<CR>
+au BufWrite * :Autoformat
 
 " --------------------------------------------------------------------------- "
 "                          Search & File Management                           "

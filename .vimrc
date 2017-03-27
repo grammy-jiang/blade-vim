@@ -62,6 +62,8 @@ au BufWrite * :Autoformat
 "                                    Git                                      "
 " --------------------------------------------------------------------------- "
 
+" https://github.com/tpope/vim-fugitive
+Plugin 'tpope/vim-fugitive'
 
 " --------------------------------------------------------------------------- "
 "                          Syntax Check & Highlight                           "

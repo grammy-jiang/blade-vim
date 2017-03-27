@@ -27,6 +27,7 @@ else
     set background=dark
 endif
 
+" https://github.com/Yggdroot/indentLine
 Plugin 'Yggdroot/indentLine'
 let g:indentLine_char = '|'
 nmap <F9> :IndentLinesToggle<CR>

@@ -51,6 +51,8 @@ au BufWrite * :Autoformat
 
 Plugin 'jiangmiao/auto-pairs'
 
+Plugin 'tpope/vim-commentary'
+
 " --------------------------------------------------------------------------- "
 "                          Search & File Management                           "
 " --------------------------------------------------------------------------- "

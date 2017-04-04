@@ -19,7 +19,6 @@ let g:airline#extensions#tabline#left_alt_sep = '|'
 
 Plugin 'vim-airline/vim-airline-themes'
 
-" https://github.com/altercation/vim-colors-solarized
 Plugin 'altercation/vim-colors-solarized'
 if has('gui_running')
     set background=light
@@ -27,7 +26,6 @@ else
     set background=dark
 endif
 
-" https://github.com/Yggdroot/indentLine
 Plugin 'Yggdroot/indentLine'
 let g:indentLine_char = '|'
 nmap <F9> :IndentLinesToggle<CR>
@@ -36,7 +34,6 @@ nmap <F9> :IndentLinesToggle<CR>
 "                        Auto Completion & Auto Format                        "
 " --------------------------------------------------------------------------- "
 
-" https://github.com/valloric/youcompleteme
 " Install the prerequsite:
 " sudo apt-get install build-essential cmake
 " sudo apt-get install python-dev python3-dev
@@ -46,7 +43,6 @@ nmap <F9> :IndentLinesToggle<CR>
 Plugin 'valloric/youcompleteme'
 let g:ycm_python_binary_path = 'python'
 
-" https://github.com/Chiel92/vim-autoformat
 " Install the prerequsite:
 " pip install autopep8
 Plugin 'Chiel92/vim-autoformat'
@@ -64,21 +60,22 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 map <C-n> :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
+Plugin 'jistr/vim-nerdtree-tabs'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
+
+
 " --------------------------------------------------------------------------- "
 "                                    Git                                      "
 " --------------------------------------------------------------------------- "
 
-" https://github.com/tpope/vim-fugitive
 Plugin 'tpope/vim-fugitive'
 
 " --------------------------------------------------------------------------- "
 "                          Syntax Check & Highlight                           "
 " --------------------------------------------------------------------------- "
 
-" https://github.com/docker/docker/tree/master/contrib/syntax/vim
 Plugin 'docker/docker' , {'rtp': '/contrib/syntax/vim/'}
 
-" https://github.com/vim-syntastic/syntastic
 " For python development, flake8 or pyflakes or pylint is needed.
 Plugin 'scrooloose/syntastic'
 set statusline+=%#warningmsg#

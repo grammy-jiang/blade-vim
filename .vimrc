@@ -109,3 +109,6 @@ set ignorecase
 
 " history
 set history=10000
+
+" indent
+set foldmethod=indent

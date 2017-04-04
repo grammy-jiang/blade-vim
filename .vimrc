@@ -49,6 +49,8 @@ Plugin 'Chiel92/vim-autoformat'
 noremap <F3> :Autoformat<CR>
 au BufWrite * :Autoformat
 
+Plugin 'jiangmiao/auto-pairs'
+
 " --------------------------------------------------------------------------- "
 "                          Search & File Management                           "
 " --------------------------------------------------------------------------- "
@@ -61,7 +63,6 @@ map <C-n> :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 Plugin 'jistr/vim-nerdtree-tabs'
-Plugin 'Xuyuanp/nerdtree-git-plugin'
 
 Plugin 'scrooloose/nerdcommenter'
 
@@ -70,11 +71,16 @@ let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_working_path_mode = 'ra'
 
+Plugin 'majutsushi/tagbar'
+nmap <F8> :TagbarToggle<CR>
+
 " --------------------------------------------------------------------------- "
 "                                    Git                                      "
 " --------------------------------------------------------------------------- "
 
 Plugin 'tpope/vim-fugitive'
+
+Plugin 'Xuyuanp/nerdtree-git-plugin'
 
 " --------------------------------------------------------------------------- "
 "                          Syntax Check & Highlight                           "
@@ -94,6 +100,10 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
 let g:syntastic_aggregate_errors = 1
+
+" Install jedi first
+" pip install jedi
+Plugin 'davidhalter/jedi-vim'
 
 call vundle#end()            " required
 filetype plugin indent on    " required

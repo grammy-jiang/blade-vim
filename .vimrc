@@ -53,6 +53,12 @@ Plugin 'jiangmiao/auto-pairs'
 
 Plugin 'tpope/vim-commentary'
 
+Plugin 'godlygeek/tabular'
+
+Plugin 'edkolev/tmuxline.vim'
+
+Plugin 'plasticboy/vim-markdown'
+
 " --------------------------------------------------------------------------- "
 "                          Search & File Management                           "
 " --------------------------------------------------------------------------- "

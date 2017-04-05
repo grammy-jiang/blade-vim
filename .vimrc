@@ -133,6 +133,7 @@ set expandtab
 " search
 set hlsearch
 set ignorecase
+set showmatch
 
 " history
 set history=10000

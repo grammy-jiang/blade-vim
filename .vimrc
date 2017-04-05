@@ -114,6 +114,9 @@ Plugin 'davidhalter/jedi-vim'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
+colorscheme solarized
+set number
+
 " auto reload the vimrc when it changes
 if has ('autocmd') " Remain compatible with earlier versions
  augroup vimrc     " Source vim configuration upon save

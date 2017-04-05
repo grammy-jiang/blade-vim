@@ -47,7 +47,6 @@ let g:ycm_python_binary_path = 'python'
 " pip install autopep8
 Plugin 'Chiel92/vim-autoformat'
 noremap <F3> :Autoformat<CR>
-au BufWrite * :Autoformat
 
 Plugin 'jiangmiao/auto-pairs'
 

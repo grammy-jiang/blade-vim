@@ -11,11 +11,14 @@ Plugin 'VundleVim/Vundle.vim'
 "                                 Appearence                                  "
 " --------------------------------------------------------------------------- "
 
+" NOTICE: Install fonts for vim-airline
+" https://powerline.readthedocs.io/en/master/installation/linux.html#fonts-installation
 Plugin 'vim-airline/vim-airline'
 set laststatus=2
-let g:airline#extensions#tabline#enabled = 1 
-let g:airline#extensions#tabline#left_sep = ' ' 
-let g:airline#extensions#tabline#left_alt_sep = '|' 
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = '|'
+let g:airline_powerline_fonts = 1
 
 Plugin 'vim-airline/vim-airline-themes'
 
@@ -111,18 +114,25 @@ let g:syntastic_aggregate_errors = 1
 " pip install jedi
 Plugin 'davidhalter/jedi-vim'
 
+" --------------------------------------------------------------------------- "
+"                          Syntax Check & Highlight                           "
+" --------------------------------------------------------------------------- "
+
+Plugin 'easymotion/vim-easymotion'
+
 call vundle#end()            " required
 filetype plugin indent on    " required
 
-colorscheme solarized
+" colorscheme solarized
 set number
+set nowrap
 
 " auto reload the vimrc when it changes
 if has ('autocmd') " Remain compatible with earlier versions
- augroup vimrc     " Source vim configuration upon save
-    autocmd! BufWritePost $MYVIMRC source % | echom "Reloaded " . $MYVIMRC | redraw
-    autocmd! BufWritePost $MYGVIMRC if has('gui_running') | so % | echom "Reloaded " . $MYGVIMRC | endif | redraw
-  augroup END
+    augroup vimrc     " Source vim configuration upon save
+        autocmd! BufWritePost $MYVIMRC source % | echom "Reloaded " . $MYVIMRC | redraw
+        autocmd! BufWritePost $MYGVIMRC if has('gui_running') | so % | echom "Reloaded " . $MYGVIMRC | endif | redraw
+    augroup END
 endif " has autocmd
 
 " set tab as 4 space

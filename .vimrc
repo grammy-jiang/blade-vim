@@ -116,6 +116,7 @@ filetype plugin indent on    " required
 
 colorscheme solarized
 set number
+set nowrap
 
 " auto reload the vimrc when it changes
 if has ('autocmd') " Remain compatible with earlier versions

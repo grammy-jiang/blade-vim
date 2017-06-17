@@ -29,9 +29,9 @@ else
     set background=dark
 endif
 
-Plugin 'Yggdroot/indentLine'
-let g:indentLine_char = '|'
-nmap <F9> :IndentLinesToggle<CR>
+" Plugin 'Yggdroot/indentLine'
+" let g:indentLine_char = '|'
+" nmap <F9> :IndentLinesToggle<CR>
 
 " --------------------------------------------------------------------------- "
 "                        Auto Completion & Auto Format                        "
@@ -116,7 +116,7 @@ let g:syntastic_aggregate_errors = 1
 Plugin 'davidhalter/jedi-vim'
 
 " --------------------------------------------------------------------------- "
-"                          Syntax Check & Highlight                           "
+"                                 Navigation                                  "
 " --------------------------------------------------------------------------- "
 
 Plugin 'easymotion/vim-easymotion'
@@ -124,7 +124,7 @@ Plugin 'easymotion/vim-easymotion'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
-" colorscheme solarized
+colorscheme solarized
 set number
 set nowrap
 
@@ -152,3 +152,14 @@ set history=10000
 
 " indent
 set foldmethod=indent
+
+set showcmd
+
+nmap <Up> <Nop>
+nmap <Down> <Nop>
+nmap <Left> <Nop>
+nmap <Right> <Nop>
+imap <Up> <Nop>
+imap <Down> <Nop>
+imap <Left> <Nop>
+imap <Right> <Nop>

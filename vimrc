@@ -46,6 +46,7 @@ endif
 " pip install jedi
 Plugin 'valloric/youcompleteme'
 let g:ycm_python_binary_path = 'python'
+set encoding=utf-8
 
 " Install the prerequsite:
 " pip install autopep8

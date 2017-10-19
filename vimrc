@@ -29,9 +29,9 @@ else
     set background=dark
 endif
 
-" Plugin 'Yggdroot/indentLine'
-" let g:indentLine_char = '|'
-" nmap <F9> :IndentLinesToggle<CR>
+Plugin 'Yggdroot/indentLine'
+let g:indentLine_char = '|'
+nmap <F9> :IndentLinesToggle<CR>
 
 " --------------------------------------------------------------------------- "
 "                        Auto Completion & Auto Format                        "
@@ -152,6 +152,8 @@ set history=10000
 
 " indent
 set foldmethod=indent
+
+set colorcolumn=80
 
 set showcmd
 

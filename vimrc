@@ -94,6 +94,8 @@ Plugin 'tpope/vim-fugitive'
 
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 
+Plugin 'airblade/vim-gitgutter'
+
 " --------------------------------------------------------------------------- "
 "                          Syntax Check & Highlight                           "
 " --------------------------------------------------------------------------- "

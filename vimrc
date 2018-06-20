@@ -172,3 +172,6 @@ imap <Up> <Nop>
 imap <Down> <Nop>
 imap <Left> <Nop>
 imap <Right> <Nop>
+
+" Allow saving of files as sudo when I forgot to start vim using sudo.
+cmap w!! w !sudo tee > /dev/null %

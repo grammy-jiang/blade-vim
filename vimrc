@@ -34,6 +34,10 @@ Plugin 'Yggdroot/indentLine'
 let g:indentLine_char = '|'
 nmap <F9> :IndentLinesToggle<CR>
 
+Plugin 'skywind3000/vim-keysound'
+let g:keysound_enable = 1
+let g:keysound_theme = 'default'
+
 " --------------------------------------------------------------------------- "
 "                        Auto Completion & Auto Format                        "
 " --------------------------------------------------------------------------- "
@@ -72,7 +76,7 @@ autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 map <C-n> :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-let NERDTreeIgnore=['__pycache__$[[dir]]', '\.git$[[dir]]', '\.idea$[[dir]]', '\.swp$[[file]]']
+let NERDTreeIgnore=['__pycache__$[[dir]]', '\.git$[[dir]]', '\.idea$[[dir]]', '\.swp$[[file]]', '\.pyc', '\.pytest_cache', '\.tox']
 let NERDTreeShowHidden=1
 
 Plugin 'jistr/vim-nerdtree-tabs'

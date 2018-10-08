@@ -1,4 +1,8 @@
 set shell=/bin/bash
+
+if has('python3')
+endif
+
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
@@ -13,7 +17,8 @@ Plugin 'VundleVim/Vundle.vim'
 " --------------------------------------------------------------------------- "
 
 " NOTICE: Install fonts for vim-airline
-" https://powerline.readthedocs.io/en/master/installation/linux.html#fonts-installation
+" On Fedora, install powerline-fonts
+" sudo dnf install powerline-fonts
 Plugin 'vim-airline/vim-airline'
 set laststatus=2
 let g:airline#extensions#tabline#enabled = 1
@@ -22,6 +27,7 @@ let g:airline#extensions#tabline#left_alt_sep = '|'
 let g:airline_powerline_fonts = 1
 
 Plugin 'vim-airline/vim-airline-themes'
+let g:aireline_theme='solarized'
 
 Plugin 'altercation/vim-colors-solarized'
 if has('gui_running')
@@ -34,9 +40,15 @@ Plugin 'Yggdroot/indentLine'
 let g:indentLine_char = '|'
 nmap <F9> :IndentLinesToggle<CR>
 
+" On Fedora, install SDL2_mixer-devel
+" sudo dnf install SDL2_mixer-devel
+" For python, install PySDL2
+" sudo python3 -m pip install pysdl2
 Plugin 'skywind3000/vim-keysound'
 let g:keysound_enable = 1
 let g:keysound_theme = 'default'
+" let g:keysound_volume = 500
+" let g:keysound_py_version = 2
 
 " --------------------------------------------------------------------------- "
 "                        Auto Completion & Auto Format                        "
@@ -136,7 +148,7 @@ Plugin 'easymotion/vim-easymotion'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
-colorscheme solarized
+" colorscheme solarized
 set number
 set nowrap
 
@@ -180,3 +192,12 @@ imap <Right> <Nop>
 
 " Allow saving of files as sudo when I forgot to start vim using sudo.
 cmap w!! w !sudo tee > /dev/null %
+
+" Force the cursor onto a new line after 80 characters
+set textwidth=80
+" However, in Git commit messages, let’s make it 72 characters
+autocmd FileType gitcommit set textwidth=72
+" Colour the 81st (or 73rd) column so that we don’t type over our limit
+set colorcolumn=+1
+" In Git commit messages, also colour the 51st column (for titles)
+autocmd FileType gitcommit set colorcolumn+=51

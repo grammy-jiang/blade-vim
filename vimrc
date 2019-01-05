@@ -6,11 +6,7 @@ endif
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-" https://github.com/VundleVim/Vundle.vim
-Plugin 'VundleVim/Vundle.vim'
+call plug#begin('~/.vim/plugged')
 
 " --------------------------------------------------------------------------- "
 "                                 Appearence                                  "
@@ -19,24 +15,24 @@ Plugin 'VundleVim/Vundle.vim'
 " NOTICE: Install fonts for vim-airline
 " On Fedora, install powerline-fonts
 " sudo dnf install powerline-fonts
-Plugin 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline'
 set laststatus=2
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
 let g:airline_powerline_fonts = 1
 
-Plugin 'vim-airline/vim-airline-themes'
+Plug 'vim-airline/vim-airline-themes'
 let g:aireline_theme='solarized'
 
-Plugin 'altercation/vim-colors-solarized'
+Plug 'altercation/vim-colors-solarized'
 if has('gui_running')
     set background=light
 else
     set background=dark
 endif
 
-Plugin 'Yggdroot/indentLine'
+Plug 'Yggdroot/indentLine'
 let g:indentLine_char = '|'
 nmap <F9> :IndentLinesToggle<CR>
 
@@ -44,7 +40,7 @@ nmap <F9> :IndentLinesToggle<CR>
 " sudo dnf install SDL2_mixer-devel
 " For python, install PySDL2
 " sudo python3 -m pip install pysdl2
-Plugin 'skywind3000/vim-keysound'
+Plug 'skywind3000/vim-keysound'
 let g:keysound_enable = 1
 let g:keysound_theme = 'default'
 " let g:keysound_volume = 500
@@ -60,30 +56,30 @@ let g:keysound_theme = 'default'
 " cd ~/.vim/bundle/YouCompleteMe
 " ./install.py --clang-completer
 " pip install jedi
-Plugin 'valloric/youcompleteme'
+Plug 'valloric/youcompleteme'
 let g:ycm_python_binary_path = 'python'
 set encoding=utf-8
 
 " Install the prerequsite:
 " pip install autopep8
-Plugin 'Chiel92/vim-autoformat'
+Plug 'Chiel92/vim-autoformat'
 noremap <F3> :Autoformat<CR>
 
-Plugin 'jiangmiao/auto-pairs'
+Plug 'jiangmiao/auto-pairs'
 
-Plugin 'tpope/vim-commentary'
+Plug 'tpope/vim-commentary'
 
-Plugin 'godlygeek/tabular'
+Plug 'godlygeek/tabular'
 
-Plugin 'edkolev/tmuxline.vim'
+Plug 'edkolev/tmuxline.vim'
 
-Plugin 'plasticboy/vim-markdown'
+Plug 'plasticboy/vim-markdown'
 
 " --------------------------------------------------------------------------- "
 "                          Search & File Management                           "
 " --------------------------------------------------------------------------- "
 
-Plugin 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdtree'
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 map <C-n> :NERDTreeToggle<CR>
@@ -91,36 +87,36 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 let NERDTreeIgnore=['__pycache__$[[dir]]', '\.git$[[dir]]', '\.idea$[[dir]]', '\.swp$[[file]]', '\.pyc', '\.pytest_cache', '\.tox', '\.egg-info']
 let NERDTreeShowHidden=1
 
-Plugin 'jistr/vim-nerdtree-tabs'
+Plug 'jistr/vim-nerdtree-tabs'
 
-Plugin 'scrooloose/nerdcommenter'
+Plug 'scrooloose/nerdcommenter'
 
-Plugin 'ctrlpvim/ctrlp.vim'
+Plug 'ctrlpvim/ctrlp.vim'
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_working_path_mode = 'ra'
 
-Plugin 'majutsushi/tagbar'
+Plug 'majutsushi/tagbar'
 nmap <F8> :TagbarToggle<CR>
 
 " --------------------------------------------------------------------------- "
 "                                    Git                                      "
 " --------------------------------------------------------------------------- "
 
-Plugin 'tpope/vim-fugitive'
+Plug 'tpope/vim-fugitive'
 
-Plugin 'Xuyuanp/nerdtree-git-plugin'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 
-Plugin 'airblade/vim-gitgutter'
+Plug 'airblade/vim-gitgutter'
 
 " --------------------------------------------------------------------------- "
 "                          Syntax Check & Highlight                           "
 " --------------------------------------------------------------------------- "
 
-Plugin 'docker/docker' , {'rtp': '/contrib/syntax/vim/'}
+Plug 'docker/docker' , {'rtp': '/contrib/syntax/vim/'}
 
 " For python development, flake8 or pyflakes or pylint is needed.
-Plugin 'scrooloose/syntastic'
+Plug 'scrooloose/syntastic'
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
@@ -137,15 +133,18 @@ let g:syntastic_python_pylint_post_args = "--const-rgx=[a-zA-Z]+"
 
 " Install jedi first
 " pip install jedi
-Plugin 'davidhalter/jedi-vim'
+Plug 'davidhalter/jedi-vim'
 
 " --------------------------------------------------------------------------- "
 "                                 Navigation                                  "
 " --------------------------------------------------------------------------- "
 
-Plugin 'easymotion/vim-easymotion'
+Plug 'easymotion/vim-easymotion'
 
-call vundle#end()            " required
+Plug 'sheerun/vim-polyglot'
+
+" call vundle#end()            " required
+call plug#end()
 filetype plugin indent on    " required
 
 " colorscheme solarized

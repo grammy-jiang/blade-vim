@@ -61,7 +61,7 @@ let g:keysound_theme = 'default'
 " cd ~/.vim/bundle/YouCompleteMe
 " ./install.py --clang-completer
 " pip install jedi
-Plug 'valloric/youcompleteme'
+Plug 'valloric/youcompleteme', {'do': './install.py --clang-completer'}
 let g:ycm_python_binary_path = 'python'
 set encoding=utf-8
 

@@ -58,7 +58,7 @@ let g:keysound_theme = 'default'
 " cd ~/.vim/bundle/YouCompleteMe
 " ./install.py --clang-completer
 " pip install jedi
-Plug 'valloric/youcompleteme', {'do': './install.py --clang-completer'}
+Plug 'valloric/youcompleteme', {'do': './install.py --clang-completer && pip install --user jedi'}
 let g:ycm_python_binary_path = 'python'
 set encoding=utf-8
 
@@ -115,7 +115,7 @@ Plug 'airblade/vim-gitgutter'
 "                          Syntax Check & Highlight                           "
 " --------------------------------------------------------------------------- "
 
-Plug 'docker/docker' , {'rtp': '/contrib/syntax/vim/'}
+Plug 'moby/moby' , {'rtp': '/contrib/syntax/vim/'}
 
 " For python development, flake8 or pyflakes or pylint is needed.
 Plug 'scrooloose/syntastic'
@@ -132,10 +132,6 @@ let g:syntastic_aggregate_errors = 1
 
 let g:syntastic_python_pylint_post_args = "--const-rgx=[a-zA-Z]+"
 " let g:syntastic_python_pylint_post_args = "--include-naming-hints=y"
-
-" Install jedi first
-" pip install jedi
-Plug 'davidhalter/jedi-vim', {'do': 'pip install --user jedi'}
 
 " --------------------------------------------------------------------------- "
 "                                 Navigation                                  "

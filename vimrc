@@ -117,21 +117,8 @@ Plug 'airblade/vim-gitgutter'
 
 Plug 'moby/moby' , {'rtp': '/contrib/syntax/vim/'}
 
-" For python development, flake8 or pyflakes or pylint is needed.
-Plug 'scrooloose/syntastic'
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-
-let g:syntastic_aggregate_errors = 1
-
-let g:syntastic_python_pylint_post_args = "--const-rgx=[a-zA-Z]+"
-" let g:syntastic_python_pylint_post_args = "--include-naming-hints=y"
+Plug 'w0rp/ale'
+let g:ale_echo_msg_format = '[%linter%] [%severity%] [%code%] %s'
 
 " --------------------------------------------------------------------------- "
 "                                 Navigation                                  "

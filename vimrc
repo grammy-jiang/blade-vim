@@ -45,7 +45,7 @@ nmap <F9> :IndentLinesToggle<CR>
 " sudo dnf install SDL2_mixer-devel
 " For python, install PySDL2
 " sudo python3 -m pip install pysdl2
-Plug 'skywind3000/vim-keysound'
+Plug 'skywind3000/vim-keysound', {'do': 'pip install --user pysdl2'}
 let g:keysound_enable = 1
 let g:keysound_theme = 'default'
 " let g:keysound_volume = 500
@@ -67,7 +67,7 @@ set encoding=utf-8
 
 " Install the prerequsite:
 " pip install autopep8
-Plug 'Chiel92/vim-autoformat'
+Plug 'Chiel92/vim-autoformat', {'do': 'pip install --user autopep8'}
 noremap <F3> :Autoformat<CR>
 
 Plug 'jiangmiao/auto-pairs'
@@ -138,7 +138,7 @@ let g:syntastic_python_pylint_post_args = "--const-rgx=[a-zA-Z]+"
 
 " Install jedi first
 " pip install jedi
-Plug 'davidhalter/jedi-vim'
+Plug 'davidhalter/jedi-vim', {'do': 'pip install --user jedi'}
 
 " --------------------------------------------------------------------------- "
 "                                 Navigation                                  "

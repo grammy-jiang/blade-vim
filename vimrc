@@ -63,8 +63,9 @@ let g:ycm_python_binary_path = 'python'
 set encoding=utf-8
 
 " Install the prerequsite:
-" pip install autopep8
-Plug 'Chiel92/vim-autoformat', {'do': 'pip install --user autopep8'}
+" pip install yapf
+Plug 'Chiel92/vim-autoformat', {'do': 'pip install --user yapf'}
+let g:formatter_yapf_style = 'pep8'
 noremap <F3> :Autoformat<CR>
 
 Plug 'jiangmiao/auto-pairs'

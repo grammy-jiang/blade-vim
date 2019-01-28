@@ -1,7 +1,6 @@
 set shell=/bin/bash
 
-if has('python3')
-endif
+let g:pymode_python = 'python3'
 
 if empty(glob('~/.vim/autoload/plug.vim'))
     silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -42,7 +41,7 @@ nmap <F9> :IndentLinesToggle<CR>
 " sudo dnf install SDL2_mixer-devel
 " For python, install PySDL2
 " sudo python3 -m pip install pysdl2
-Plug 'skywind3000/vim-keysound', {'do': 'pip install --user pysdl2'}
+Plug 'skywind3000/vim-keysound', {'do': 'pip3 install --user pysdl2'}
 let g:keysound_enable = 1
 let g:keysound_theme = 'default'
 " let g:keysound_volume = 500
@@ -58,15 +57,18 @@ let g:keysound_theme = 'default'
 " cd ~/.vim/bundle/YouCompleteMe
 " ./install.py --clang-completer
 " pip install jedi
-Plug 'valloric/youcompleteme', {'do': './install.py --clang-completer && pip install --user jedi'}
+Plug 'valloric/youcompleteme', {
+            \'do': './install.py --clang-completer && pip3 install --user jedi'
+            \}
 let g:ycm_python_binary_path = 'python'
 set encoding=utf-8
 
 " Install the prerequsite:
 " pip install yapf
-Plug 'Chiel92/vim-autoformat', {'do': 'pip install --user yapf'}
+Plug 'Chiel92/vim-autoformat', {'do': 'pip3 install --user yapf'}
 let g:formatter_yapf_style = 'pep8'
-noremap <F3> :Autoformat<CR>
+" noremap <F3> :Autoformat<CR>
+" au BufWrite * :Autoformat
 
 Plug 'jiangmiao/auto-pairs'
 
@@ -87,7 +89,16 @@ autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 map <C-n> :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-let NERDTreeIgnore=['__pycache__$[[dir]]', '\.git$[[dir]]', '\.idea$[[dir]]', '\.swp$[[file]]', '\.pyc', '\.pytest_cache', '\.tox', '\.egg-info']
+let NERDTreeIgnore=[
+            \'__pycache__$[[dir]]',
+            \'\.git$[[dir]]',
+            \'\.idea$[[dir]]',
+            \'\.swp$[[file]]',
+            \'\.pyc',
+            \'\.pytest_cache',
+            \'\.tox',
+            \'\.egg-info'
+            \]
 let NERDTreeShowHidden=1
 
 Plug 'jistr/vim-nerdtree-tabs'
@@ -118,8 +129,18 @@ Plug 'airblade/vim-gitgutter'
 
 Plug 'moby/moby' , {'rtp': '/contrib/syntax/vim/'}
 
-Plug 'w0rp/ale'
+Plug 'w0rp/ale', {'do':
+            \'pip3 install --user autopep8 mypy pylint black flake8 isort yapf'
+            \}
 let g:ale_echo_msg_format = '[%linter%] [%severity%] [%code%] %s'
+let g:ale_fix_on_save = 1
+let g:ale_fixers = {
+            \'*': ['remove_trailing_lines', 'trim_whitespace'],
+            \'python': [
+            \'add_blank_lines_for_python_control_statements',
+            \'autopep8', 'black', 'isort', 'yapf'
+            \]
+            \}
 
 " --------------------------------------------------------------------------- "
 "                                 Navigation                                  "
@@ -134,14 +155,6 @@ call plug#end()
 " colorscheme solarized
 set number
 set nowrap
-
-" auto reload the vimrc when it changes
-if has ('autocmd') " Remain compatible with earlier versions
-    augroup vimrc     " Source vim configuration upon save
-        autocmd! BufWritePost $MYVIMRC source % | echom "Reloaded " . $MYVIMRC | redraw
-        autocmd! BufWritePost $MYGVIMRC if has('gui_running') | so % | echom "Reloaded " . $MYGVIMRC | endif | redraw
-    augroup END
-endif " has autocmd
 
 " set tab as 4 space
 set tabstop=4
@@ -184,3 +197,13 @@ autocmd FileType gitcommit set textwidth=72
 set colorcolumn=+1
 " In Git commit messages, also colour the 51st column (for titles)
 autocmd FileType gitcommit set colorcolumn+=51
+
+" auto reload the vimrc when it changes
+if has ('autocmd') " Remain compatible with earlier versions
+    augroup vimrc     " Source vim configuration upon save
+        autocmd! BufWritePost $MYVIMRC source % | echom "Reloaded " . $MYVIMRC | redraw
+        autocmd! BufWritePost $MYGVIMRC if has('gui_running') | so % | echom "Reloaded " . $MYGVIMRC | endif | redraw
+    augroup END
+endif " has autocmd
+
+noremap <C-d> :sh<cr>

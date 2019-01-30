@@ -1,4 +1,4 @@
-set shell=/bin/bash
+set shell=/usr/local/bin/zsh
 
 let g:pymode_python = 'python3'
 
@@ -94,6 +94,7 @@ let NERDTreeIgnore=[
             \'\.git$[[dir]]',
             \'\.idea$[[dir]]',
             \'\.swp$[[file]]',
+            \'\.mypy_cache$[[dir]]',
             \'\.pyc',
             \'\.pytest_cache',
             \'\.tox',
@@ -129,17 +130,12 @@ Plug 'airblade/vim-gitgutter'
 
 Plug 'moby/moby' , {'rtp': '/contrib/syntax/vim/'}
 
-Plug 'w0rp/ale', {'do':
-            \'pip3 install --user autopep8 mypy pylint black flake8 isort yapf'
-            \}
+Plug 'w0rp/ale', {'do':'pip3 install --user autopep8 mypy pylint black flake8 isort yapf'}
 let g:ale_echo_msg_format = '[%linter%] [%severity%] [%code%] %s'
-let g:ale_fix_on_save = 1
+" let g:ale_fix_on_save = 1
 let g:ale_fixers = {
             \'*': ['remove_trailing_lines', 'trim_whitespace'],
-            \'python': [
-            \'add_blank_lines_for_python_control_statements',
-            \'autopep8', 'black', 'isort', 'yapf'
-            \]
+            \'python': ['add_blank_lines_for_python_control_statements','autopep8', 'black', 'isort']
             \}
 
 " --------------------------------------------------------------------------- "
@@ -205,5 +201,3 @@ if has ('autocmd') " Remain compatible with earlier versions
         autocmd! BufWritePost $MYGVIMRC if has('gui_running') | so % | echom "Reloaded " . $MYGVIMRC | endif | redraw
     augroup END
 endif " has autocmd
-
-noremap <C-d> :sh<cr>

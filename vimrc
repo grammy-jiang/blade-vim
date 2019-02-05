@@ -135,7 +135,7 @@ let g:ale_echo_msg_format = '[%linter%] [%severity%] [%code%] %s'
 " let g:ale_fix_on_save = 1
 let g:ale_fixers = {
             \'*': ['remove_trailing_lines', 'trim_whitespace'],
-            \'python': ['add_blank_lines_for_python_control_statements','autopep8', 'black', 'isort']
+            \'python': ['add_blank_lines_for_python_control_statements','autopep8', 'black', 'isort', 'yapf']
             \}
 
 " --------------------------------------------------------------------------- "

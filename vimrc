@@ -79,7 +79,7 @@ Plug 'tpope/vim-commentary'
 
 Plug 'godlygeek/tabular'
 
-Plug 'edkolev/tmuxline.vim'
+" Plug 'edkolev/tmuxline.vim'
 
 Plug 'plasticboy/vim-markdown'
 
@@ -115,8 +115,8 @@ let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_working_path_mode = 'ra'
 
-Plug 'majutsushi/tagbar'
-nmap <F8> :TagbarToggle<CR>
+" Plug 'majutsushi/tagbar'
+" nmap <F8> :TagbarToggle<CR>
 
 " --------------------------------------------------------------------------- "
 "                                    Git                                      "
@@ -126,7 +126,7 @@ Plug 'tpope/vim-fugitive'
 
 Plug 'Xuyuanp/nerdtree-git-plugin'
 
-Plug 'airblade/vim-gitgutter'
+" Plug 'airblade/vim-gitgutter'
 
 " --------------------------------------------------------------------------- "
 "                          Syntax Check & Highlight                           "

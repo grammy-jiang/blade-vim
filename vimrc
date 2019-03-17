@@ -47,6 +47,9 @@ let g:keysound_theme = 'default'
 " let g:keysound_volume = 500
 " let g:keysound_py_version = 2
 
+Plug 'editorconfig/editorconfig-vim'
+let g:EditorConfig_exclude_patterns = ['fugitive://.*']
+
 " --------------------------------------------------------------------------- "
 "                        Auto Completion & Auto Format                        "
 " --------------------------------------------------------------------------- "
@@ -93,6 +96,7 @@ let NERDTreeIgnore=[
             \'__pycache__$[[dir]]',
             \'\.git$[[dir]]',
             \'\.idea$[[dir]]',
+            \'\.mypy_cache$[[dir]]',
             \'\.swp$[[file]]',
             \'\.mypy_cache$[[dir]]',
             \'\.pyc',
@@ -145,6 +149,11 @@ let g:ale_fixers = {
 Plug 'easymotion/vim-easymotion'
 
 Plug 'sheerun/vim-polyglot'
+
+Plug 'takac/vim-hardtime'
+let g:hardtime_default_on = 1
+let g:hardtime_showmsg = 1
+let g:hardtime_allow_different_key = 1
 
 call plug#end()
 

@@ -57,7 +57,7 @@ let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 " ./install.py --clang-completer
 " pip install jedi
 Plug 'valloric/youcompleteme', {
-            \'do': './install.py --clang-completer && python3 -m pip install --upgrade --user jedi'
+            \'do': './install.py --clang-completer && pip install --upgrade --user jedi'
             \}
 let g:ycm_python_binary_path = 'python'
 set encoding=utf-8

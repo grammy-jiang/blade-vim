@@ -37,7 +37,7 @@ nmap <F9> :IndentLinesToggle<CR>
 " sudo dnf install SDL2_mixer-devel
 " For python, install PySDL2
 " sudo python3 -m pip install pysdl2
-" Plug 'skywind3000/vim-keysound', {'do': 'pip install --user pysdl2'}
+" Plug 'skywind3000/vim-keysound', {'do': 'pip install --upgrade pysdl2'}
 " let g:keysound_enable = 1
 " let g:keysound_theme = 'default'
 " let g:keysound_volume = 500
@@ -57,14 +57,14 @@ let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 " ./install.py --clang-completer
 " pip install jedi
 Plug 'valloric/youcompleteme', {
-    \'do': './install.py --clang-completer && pip install --upgrade --user jedi'
+    \'do': './install.py --clang-completer && pip install --upgrade jedi'
     \}
 let g:ycm_python_binary_path = 'python'
 set encoding=utf-8
 
 " Install the prerequsite:
 " pip install yapf
-Plug 'Chiel92/vim-autoformat', {'do': 'pip install --user yapf'}
+Plug 'Chiel92/vim-autoformat', {'do': 'pip install --upgrade yapf'}
 let g:formatter_yapf_style = 'pep8'
 " noremap <F3> :Autoformat<CR>
 " au BufWrite * :Autoformat
@@ -130,7 +130,7 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 
 Plug 'moby/moby' , {'rtp': '/contrib/syntax/vim/'}
 
-Plug 'w0rp/ale', {'do':'pip install --user autopep8 mypy pylint black flake8 isort yapf'}
+Plug 'w0rp/ale', {'do':'pip install --upgrade autopep8 mypy pylint black flake8 isort yapf'}
 let g:ale_echo_msg_format = '[%linter%] [%severity%] [%code%] %s'
 " let g:ale_fix_on_save = 1
 let g:ale_fixers = {

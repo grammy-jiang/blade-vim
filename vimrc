@@ -89,17 +89,17 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 map <C-n> :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 let NERDTreeIgnore=[
-            \'__pycache__$[[dir]]',
-            \'\.git$[[dir]]',
-            \'\.idea$[[dir]]',
-            \'\.mypy_cache$[[dir]]',
-            \'\.swp$[[file]]',
-            \'\.mypy_cache$[[dir]]',
-            \'\.pyc',
-            \'\.pytest_cache',
-            \'\.tox',
-            \'\.egg-info'
-            \]
+    \'__pycache__$[[dir]]',
+    \'\.git$[[dir]]',
+    \'\.idea$[[dir]]',
+    \'\.mypy_cache$[[dir]]',
+    \'\.swp$[[file]]',
+    \'\.mypy_cache$[[dir]]',
+    \'\.pyc',
+    \'\.pytest_cache',
+    \'\.tox',
+    \'\.egg-info'
+    \]
 let NERDTreeShowHidden=1
 
 Plug 'jistr/vim-nerdtree-tabs'

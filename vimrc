@@ -57,14 +57,14 @@ let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 " ./install.py --clang-completer
 " pip install jedi
 Plug 'valloric/youcompleteme', {
-            \'do': './install.py --clang-completer && pip install --upgrade --user jedi'
-            \}
+    \'do': './install.py --clang-completer && pip install --upgrade --user jedi'
+    \}
 let g:ycm_python_binary_path = 'python'
 set encoding=utf-8
 
 " Install the prerequsite:
 " pip install yapf
-Plug 'Chiel92/vim-autoformat', {'do': 'pip3 install --user yapf'}
+Plug 'Chiel92/vim-autoformat', {'do': 'pip install --user yapf'}
 let g:formatter_yapf_style = 'pep8'
 " noremap <F3> :Autoformat<CR>
 " au BufWrite * :Autoformat
@@ -130,13 +130,13 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 
 Plug 'moby/moby' , {'rtp': '/contrib/syntax/vim/'}
 
-Plug 'w0rp/ale', {'do':'pip3 install --user autopep8 mypy pylint black flake8 isort yapf'}
+Plug 'w0rp/ale', {'do':'pip install --user autopep8 mypy pylint black flake8 isort yapf'}
 let g:ale_echo_msg_format = '[%linter%] [%severity%] [%code%] %s'
 " let g:ale_fix_on_save = 1
 let g:ale_fixers = {
-            \'*': ['remove_trailing_lines', 'trim_whitespace'],
-            \'python': ['add_blank_lines_for_python_control_statements','autopep8', 'black', 'isort', 'yapf']
-            \}
+    \'*': ['remove_trailing_lines', 'trim_whitespace'],
+    \'python': ['add_blank_lines_for_python_control_statements','autopep8', 'black', 'isort', 'yapf']
+    \}
 
 " --------------------------------------------------------------------------- "
 "                                 Navigation                                  "

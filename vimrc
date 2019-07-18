@@ -102,6 +102,8 @@ let NERDTreeIgnore=[
     \]
 let NERDTreeShowHidden=1
 
+Plug 'Xuyuanp/nerdtree-git-plugin'
+
 Plug 'jistr/vim-nerdtree-tabs'
 
 Plug 'scrooloose/nerdcommenter'
@@ -119,8 +121,6 @@ nmap <F8> :TagbarToggle<CR>
 " --------------------------------------------------------------------------- "
 
 Plug 'tpope/vim-fugitive'
-
-Plug 'Xuyuanp/nerdtree-git-plugin'
 
 " Plug 'airblade/vim-gitgutter'
 

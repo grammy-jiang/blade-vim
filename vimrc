@@ -201,6 +201,8 @@ set colorcolumn=+1
 " In Git commit messages, also colour the 51st column (for titles)
 autocmd FileType gitcommit set colorcolumn+=51
 
+autocmd Filetype gitcommit setlocal spell
+
 " auto reload the vimrc when it changes
 if has ('autocmd') " Remain compatible with earlier versions
     augroup vimrc     " Source vim configuration upon save

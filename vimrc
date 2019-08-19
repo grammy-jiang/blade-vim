@@ -138,6 +138,8 @@ let g:ale_fixers = {
     \'python': ['add_blank_lines_for_python_control_statements','autopep8', 'black', 'isort', 'yapf']
     \}
 
+Plug 'tmux-plugins/vim-tmux'
+
 " --------------------------------------------------------------------------- "
 "                                 Navigation                                  "
 " --------------------------------------------------------------------------- "

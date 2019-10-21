@@ -156,7 +156,14 @@ let g:hardtime_allow_different_key = 1
 call plug#end()
 
 " colorscheme solarized
-set number
+set number relativenumber
+
+augroup numbertoggle
+  autocmd!
+  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
+  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
+augroup END
+
 set nowrap
 
 " set tab as 4 space
